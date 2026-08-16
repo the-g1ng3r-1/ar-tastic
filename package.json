@@ -1,0 +1,18 @@
+{
+  "name": "ar-tastic",
+  "version": "0.4.0",
+  "type": "module",
+  "scripts": {
+    "dev":     "vite",
+    "build":   "vite build",
+    "preview": "vite preview",
+    "server":  "node server/index.js",
+    "start":   "npm run build && npm run server"
+  },
+  "dependencies": {
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.9"
+  }
+}

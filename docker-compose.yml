@@ -1,0 +1,13 @@
+services:
+  ar-tastic:
+    build: .
+    ports:
+      - "8443:8443"  # HTTPS - Android Chrome + iOS WebXR Viewer (real cert)
+      - "8080:8080"  # HTTP  - fallback / dev (no cert required)
+    volumes:
+      - ./certs:/certs:ro   # host cert dir → mount as /certs (populated by acme.sh)
+    environment:
+      HTTPS_PORT: "8443"
+      HTTP_PORT:  "8080"
+      CERT_DIR:   "/certs"
+    restart: unless-stopped

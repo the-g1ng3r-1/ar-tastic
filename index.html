@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#080A1E" />
+  <title>AR-tastic // Order of Mu Field Ops</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- Camera feed -->
+  <video id="camera" autoplay playsinline muted></video>
+
+  <!-- Three.js AR canvas -->
+  <canvas id="ar-canvas"></canvas>
+
+  <!-- Node list panel -->
+  <div id="node-panel">
+    <div id="node-panel-header">
+      <span>NODES</span>
+      <button id="btn-close-nodes" class="hud-btn">✕</button>
+    </div>
+    <input id="node-search" type="search" placeholder="search nodes…" autocomplete="off" spellcheck="false">
+    <ul id="node-list"></ul>
+  </div>
+
+  <!-- Node detail bottom sheet -->
+  <div id="node-detail">
+    <div id="node-detail-handle"></div>
+    <div id="node-detail-header">
+      <div id="node-detail-names">
+        <div id="node-detail-long">NODE</div>
+        <div id="node-detail-short">----</div>
+      </div>
+      <button id="btn-close-detail" class="hud-btn">✕</button>
+    </div>
+    <div id="node-detail-body"></div>
+  </div>
+
+  <!-- AR HUD (visible after START) -->
+  <div id="ui">
+    <div id="hud-top">
+      <div id="compass-wrap">
+        <canvas id="compass" width="80" height="80"></canvas>
+        <button id="btn-nodes" class="hud-btn" style="width:100%;margin-top:4px;font-size:10px;letter-spacing:0.5px;">☰ NODES</button>
+      </div>
+      <div id="status-block">
+        <div id="status-text">OFFLINE</div>
+        <div id="node-count">0 nodes</div>
+      </div>
+      <button id="btn-connect" class="hud-btn">BLE CONNECT</button>
+    </div>
+
+    <div id="hud-bottom">
+      <div id="range-row">
+        <span id="range-label">∞</span>
+        <input id="range-slider" type="range" min="0" max="100" value="100">
+        <span class="hud-label">RANGE</span>
+      </div>
+      <div id="hud-bottom-row">
+        <div id="gps-status">GPS: ---</div>
+        <div id="heading-display">HDG: ---°</div>
+        <div id="snr-legend">
+          <span class="snr-good">▮ Good</span>
+          <span class="snr-ok">▮ Fair</span>
+          <span class="snr-weak">▮ Weak</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast"></div>
+  </div>
+
+  <!-- Landing page overlay (dismissed on START) -->
+  <div id="overlay" class="overlay-visible">
+
+    <div id="landing-scanlines"></div>
+
+    <nav id="landing-nav">
+      <div id="landing-brand">
+        <img src="/images/order-of-mu-logo-A.svg" alt="Μ" id="brand-sigil">
+        <span id="brand-name">AR-tastic</span>
+      </div>
+      <div id="landing-nav-right">
+        <span class="nav-tag">ORDER OF MU</span>
+        <span class="nav-tag">FIELD OPS</span>
+      </div>
+    </nav>
+
+    <div id="landing-hero">
+
+      <div id="hero-glow"></div>
+
+      <div id="hero-logo">
+        <img src="/images/order-of-mu-logo.svg" alt="Order of Mu">
+      </div>
+
+      <div class="classification-label">►► MESH NETWORK VISUALIZER ◄◄</div>
+
+      <h1 id="hero-title">AR-tastic</h1>
+
+      <p id="hero-desc">Hold your phone up. See your Meshtastic mesh floating in real space — nodes annotated with signal strength, distance, and bearing.</p>
+
+      <p id="browser-hint"></p>
+
+      <div id="launch-card">
+        <div class="launch-card-label">// SYSTEM REQUIREMENTS</div>
+        <ul id="req-list">
+          <li id="req-camera">📷 Camera &amp; AR access</li>
+          <li id="req-orientation">🧭 Motion &amp; orientation</li>
+        </ul>
+        <button id="btn-start" class="btn-primary">ACCESS AR FEED</button>
+      </div>
+
+      <div id="hero-tenets">
+        <div class="tenet-card">
+          <span class="tenet-num">01</span>
+          <span class="tenet-title">MESH OVERLAY</span>
+          <span class="tenet-desc">Nodes pinned to real-world GPS coordinates via sensor fusion.</span>
+        </div>
+        <div class="tenet-card">
+          <span class="tenet-num">02</span>
+          <span class="tenet-title">SIGNAL INTEL</span>
+          <span class="tenet-desc">SNR, battery, bearing and last-heard annotated on every node.</span>
+        </div>
+        <div class="tenet-card">
+          <span class="tenet-num">03</span>
+          <span class="tenet-title">DARKNET</span>
+          <span class="tenet-desc">Tap the compass in AR to reveal the phantom layer.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

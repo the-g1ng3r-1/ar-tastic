@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" fill="none">
+  <!-- Order of Mu — Emu Mascot SVG — theming pass will refine artwork -->
+
+  <!-- Outer ceremonial ring -->
+  <circle cx="100" cy="100" r="90" stroke="#00ff9f" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
+  <circle cx="100" cy="100" r="78" stroke="#00ff9f" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Body -->
+  <ellipse cx="100" cy="130" rx="30" ry="42" fill="#00ff9f" opacity="0.12" stroke="#00ff9f" stroke-width="1.2"/>
+
+  <!-- Neck -->
+  <path d="M92 90 Q94 105 96 118 L104 118 Q106 105 108 90 Q104 82 100 80 Q96 82 92 90Z"
+        fill="#00ff9f" opacity="0.18" stroke="#00ff9f" stroke-width="1"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="74" rx="13" ry="11" fill="#00ff9f" opacity="0.25" stroke="#00ff9f" stroke-width="1.2"/>
+
+  <!-- Beak -->
+  <path d="M113 72 L128 74 L113 77Z" fill="#00ff9f" opacity="0.7"/>
+
+  <!-- Eye -->
+  <circle cx="109" cy="71" r="2.5" fill="#00ff9f"/>
+  <circle cx="110" cy="70.5" r="0.8" fill="#0a0a0f"/>
+
+  <!-- Left wing feathers -->
+  <path d="M70 115 Q58 120 52 128" stroke="#00ff9f" stroke-width="1.5" opacity="0.5"/>
+  <path d="M70 122 Q56 126 49 135" stroke="#00ff9f" stroke-width="1" opacity="0.4"/>
+  <path d="M70 129 Q58 132 53 140" stroke="#00ff9f" stroke-width="1" opacity="0.3"/>
+
+  <!-- Right wing feathers -->
+  <path d="M130 115 Q142 120 148 128" stroke="#00ff9f" stroke-width="1.5" opacity="0.5"/>
+  <path d="M130 122 Q144 126 151 135" stroke="#00ff9f" stroke-width="1" opacity="0.4"/>
+  <path d="M130 129 Q142 132 147 140" stroke="#00ff9f" stroke-width="1" opacity="0.3"/>
+
+  <!-- Legs -->
+  <line x1="88" y1="170" x2="80" y2="210" stroke="#00ff9f" stroke-width="2" opacity="0.6"/>
+  <line x1="80" y1="210" x2="72" y2="218" stroke="#00ff9f" stroke-width="1.5" opacity="0.5"/>
+  <line x1="80" y1="210" x2="78" y2="220" stroke="#00ff9f" stroke-width="1.5" opacity="0.5"/>
+  <line x1="80" y1="210" x2="86" y2="220" stroke="#00ff9f" stroke-width="1.5" opacity="0.5"/>
+
+  <line x1="112" y1="170" x2="120" y2="210" stroke="#00ff9f" stroke-width="2" opacity="0.6"/>
+  <line x1="120" y1="210" x2="128" y2="218" stroke="#00ff9f" stroke-width="1.5" opacity="0.5"/>
+  <line x1="120" y1="210" x2="122" y2="220" stroke="#00ff9f" stroke-width="1.5" opacity="0.5"/>
+  <line x1="120" y1="210" x2="114" y2="220" stroke="#00ff9f" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Order inscription -->
+  <text x="100" y="270" text-anchor="middle" font-family="monospace" font-size="11"
+        fill="#00ff9f" opacity="0.6" letter-spacing="4">ORDER OF MU</text>
+
+  <!-- Mu glyph below emu -->
+  <text x="100" y="255" text-anchor="middle" font-family="monospace" font-size="18"
+        fill="#00ff9f" opacity="0.35">μ</text>
+</svg>
